@@ -28,9 +28,9 @@ namespace Infraestructure.Data
         public DbSet<Country> Countries { get; set; }
         public DbSet<CuentaBancaria> CuentasBancarias { get; set; }
         public DbSet<Maquinaria> Maquinarias { get; set; }
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Componente> componentes { get; set; }
+        public DbSet<Incidencia> incidencias { get; set; }
+        public DbSet<Tarea> tareas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
