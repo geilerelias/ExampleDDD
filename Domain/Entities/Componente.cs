@@ -20,5 +20,7 @@ namespace Domain.Entities
         [Required]
         [MaxLength(50)]
         public string referencia;
+
+        public Maquinaria maquinaria { get; set; }
     }
 }

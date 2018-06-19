@@ -53,6 +53,14 @@
     <Compile Include="Base\DbContextBase.cs" />
     <Compile Include="Base\GenericRepository.cs" />
     <Compile Include="Base\UnitOfWork.cs" />
+    <Compile Include="Migrations\201806191608074_InitialCreate.cs" />
+    <Compile Include="Migrations\201806191608074_InitialCreate.Designer.cs">
+      <DependentUpon>201806191608074_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806191651258_altermaquinaria.cs" />
+    <Compile Include="Migrations\201806191651258_altermaquinaria.Designer.cs">
+      <DependentUpon>201806191651258_altermaquinaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoContext.cs" />
@@ -70,6 +78,14 @@
       <Project>{39B9631B-085A-4A0D-BE35-0852A6C26540}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806191608074_InitialCreate.resx">
+      <DependentUpon>201806191608074_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806191651258_altermaquinaria.resx">
+      <DependentUpon>201806191651258_altermaquinaria.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

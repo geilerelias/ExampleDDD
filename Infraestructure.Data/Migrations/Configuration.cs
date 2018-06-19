@@ -5,14 +5,15 @@ namespace Infraestructure.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Infraestructura.Data.Base.DbContextBase>
+    internal sealed class Configuration : DbMigrationsConfiguration<Infraestructure.Data.BancoContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Infraestructure.Data.BancoContext";
         }
 
-        protected override void Seed(Infraestructura.Data.Base.DbContextBase context)
+        protected override void Seed(Infraestructure.Data.BancoContext context)
         {
             //  This method will be called after migrating to the latest version.
 

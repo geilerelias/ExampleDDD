@@ -24,6 +24,10 @@ namespace Infraestructura.Data.Base
     
     public class DbContextBase : DbContext, IDbContext
     {
+        public DbContextBase()
+        {
+
+        }
         public DbContextBase(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {

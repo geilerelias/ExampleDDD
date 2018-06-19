@@ -41,5 +41,14 @@ namespace Domain.Entities
         [Required]
         [MaxLength(50)]
         public string Motor { get; set; }
+
+        public List<Componente> Componentes { get; set; }
+
+        public void AgregarComponente(Componente componente) {
+            //validar
+            this.Componentes.Add(componente);
+        }
+
+
     }
 }

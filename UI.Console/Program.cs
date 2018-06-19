@@ -69,31 +69,12 @@ namespace UI.Console
                 switch (System.Console.Read())
                 {
                     case '1':
-                        System.Console.Clear();
-                        System.Console.WriteLine("Maquinaria");
-                        #region  Crear Maquinaria
-
-                        Maquinaria maquinaria = new Maquinaria();
-
-                        maquinaria.Chasi = "1123344";
-                        maquinaria.Color = "rojo";
-                        maquinaria.Linea = "caminoneta";
-                        maquinaria.Marca = "nissan";
-                        maquinaria.Modelo = "2012";
-                        maquinaria.Motor = "125-678";
-                        maquinaria.Placa = "aaa-58c"; 
-                        maquinaria.FechaAdquisicion = "2018-05-05";
-
-                        service.Create(maquinaria);
-
-                        #endregion
+                        menuMaquinaria(context);
+                        
                         // Continuar lógica y extraer métodos //
                         break;
                     case '2':
-                        System.Console.Clear();
-                        System.Console.WriteLine("Crear Cuenta Bancaria");
-                        ConsignarCuentaBancaria(context);
-                        // Continuar lógica y extraer métodos //
+                        menuComponentes(context);
                         break;
                     case '3':
                         System.Console.Clear();
@@ -114,7 +95,152 @@ namespace UI.Console
             } while (seguir);
         }
 
+        private static void menuComponentes(BancoContext context)
+        {
 
+            
+            System.Console.ReadKey();
+            char seguir = 's';
+            do
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("MENU COMPONENTES");
+                System.Console.WriteLine("1º) Crear Componente a maquinaria");
+                System.Console.WriteLine("2º) Eliminar Componente a maquinaria");
+                System.Console.WriteLine("3º) Listar Componente de maquinaria");
+                System.Console.WriteLine("4º) Regresar");
+                System.Console.Write("Seleccione una opción:  ");
+                switch (System.Console.Read())
+                {
+                    case '1':
+                        System.Console.Clear();
+                        #region  Consignar
+
+                        AgregarComponenteAMaquinariaService _service = new AgregarComponenteAMaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
+                        var request = new AgregarComponenteAMaquinariaRequest() { MaquinariaPlaca = "123abc", Descripcion = "sistema de engranaje", Nombre = "Piñon", Referencia = "12345ywtwq" };
+
+                        AgregarComponenteAMaquinariaResponse response = _service.Ejecutar(request);
+
+                        System.Console.WriteLine(response.Mensaje);
+                        #endregion
+
+                        System.Console.ReadKey();
+                        // Continuar lógica y extraer métodos //
+                        break;
+                    case '2':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Eliminar Country");
+                        #region  Eliminar Country
+                        string nombre = "venezuela";
+                        //Country coun = service.Find(nombre);
+                        //service.Delete(coun);
+                        #endregion
+                        System.Console.ReadKey();
+                        // Continuar lógica y extraer métodos //
+                        break;
+                    case '3':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Listar Country");
+                        #region  Listar Country
+                        //List<Country> countries = service.GetAll().ToList();
+                        //foreach (var item in countries)
+                        //{
+                        //    System.Console.WriteLine(item.Name);
+                        //}
+                        #endregion
+                        // Continuar lógica y extraer métodos //
+                        System.Console.ReadKey();
+                        break;
+                    case '4':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Regresando al principal..   ");
+                        System.Console.ReadKey();
+                        seguir = 'n';
+                        break;
+                }
+
+
+            } while (seguir == 's');
+        }
+
+        private static void menuMaquinaria(BancoContext context)
+        {
+
+            MaquinariaService service = new MaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
+            char seguir = 's';
+            do
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("MENU MAQUINARIA");
+                System.Console.WriteLine("1º) Crear Maquinaria");
+                System.Console.WriteLine("2º) Eliminar Maquinaria");
+                System.Console.WriteLine("3º) Listar Maquinaria");
+                System.Console.WriteLine("4º) Regresar");
+                System.Console.Write("Seleccione una opción:  ");
+                switch (System.Console.Read())
+                {
+                    case '1':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Crear Country");
+                        #region  Crear Country
+                        System.Console.Clear();
+                        System.Console.WriteLine("Maquinaria");
+                        #region  Crear Maquinaria
+
+                        Maquinaria maquinaria = new Maquinaria();
+
+                        maquinaria.Chasi = "123abc";
+                        maquinaria.Color = "rojo";
+                        maquinaria.Linea = "caminoneta";
+                        maquinaria.Marca = "nissan";
+                        maquinaria.Modelo = "2012";
+                        maquinaria.Motor = "125-678";
+                        maquinaria.Placa = "aaa-58c";
+                        maquinaria.FechaAdquisicion = "2018-05-05";
+
+                        service.Create(maquinaria);
+
+                        #endregion
+
+                        #endregion
+                        System.Console.ReadKey();
+                        // Continuar lógica y extraer métodos //
+                        break;
+                    case '2':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Eliminar Country");
+                        #region  Eliminar Country
+                        //string nombre = "venezuela";
+                        //Country coun = service.Find(nombre);
+                        //service.Delete(coun);
+                        #endregion
+                        System.Console.ReadKey();
+                        // Continuar lógica y extraer métodos //
+                        break;
+                    case '3':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Listar Country");
+                        #region  Listar Country
+                        //List<Country> countries = service.GetAll().ToList();
+                        //foreach (var item in countries)
+                        //{
+                        //    System.Console.WriteLine(item.Name);
+                        //}
+                        #endregion
+                        // Continuar lógica y extraer métodos //
+                        System.Console.ReadKey();
+                        break;
+                    case '4':
+                        System.Console.Clear();
+                        System.Console.WriteLine("Regresando al principal..   ");
+                        System.Console.ReadKey();
+                        seguir = 'n';
+                        break;
+                }
+
+
+            } while (seguir == 's');
+        }
 
         private static void menuBancario()
         {
