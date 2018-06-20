@@ -36,13 +36,11 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtReferencia = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -53,6 +51,10 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Maquinaria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.Consultar.SuspendLayout();
             this.Agregar.SuspendLayout();
@@ -62,6 +64,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.materialRaisedButton4);
+            this.panel1.Controls.Add(this.materialRaisedButton3);
+            this.panel1.Controls.Add(this.materialRaisedButton2);
+            this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.materialDivider2);
             this.panel1.Controls.Add(this.materialDivider1);
             this.panel1.Location = new System.Drawing.Point(-3, 1);
@@ -106,13 +112,11 @@
             this.Agregar.Controls.Add(this.materialLabel5);
             this.Agregar.Controls.Add(this.comboBox2);
             this.Agregar.Controls.Add(this.txtDescripcion);
-            this.Agregar.Controls.Add(this.txtReferencia);
             this.Agregar.Controls.Add(this.txtNombre);
             this.Agregar.Controls.Add(this.materialLabel4);
             this.Agregar.Controls.Add(this.comboBox1);
             this.Agregar.Controls.Add(this.materialRaisedButton5);
             this.Agregar.Controls.Add(this.materialLabel3);
-            this.Agregar.Controls.Add(this.materialLabel2);
             this.Agregar.Controls.Add(this.materialLabel1);
             this.Agregar.Location = new System.Drawing.Point(4, 22);
             this.Agregar.Name = "Agregar";
@@ -150,13 +154,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 13;
-            // 
-            // txtReferencia
-            // 
-            this.txtReferencia.Location = new System.Drawing.Point(181, 213);
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(134, 20);
-            this.txtReferencia.TabIndex = 12;
             // 
             // txtNombre
             // 
@@ -198,6 +195,7 @@
             this.materialRaisedButton5.TabIndex = 8;
             this.materialRaisedButton5.Text = "Agregar";
             this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
             // 
             // materialLabel3
             // 
@@ -211,19 +209,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(89, 19);
             this.materialLabel3.TabIndex = 2;
             this.materialLabel3.Text = "Descripcion";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(95, 212);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(80, 19);
-            this.materialLabel2.TabIndex = 1;
-            this.materialLabel2.Text = "Referencia";
             // 
             // materialLabel1
             // 
@@ -309,6 +294,54 @@
             this.Empleado.HeaderText = "Empleado";
             this.Empleado.Name = "Empleado";
             // 
+            // materialRaisedButton4
+            // 
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(405, 74);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(98, 23);
+            this.materialRaisedButton4.TabIndex = 11;
+            this.materialRaisedButton4.Text = "Maquinaria";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(726, 74);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(71, 23);
+            this.materialRaisedButton3.TabIndex = 10;
+            this.materialRaisedButton3.Text = "tareas";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(621, 74);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(99, 23);
+            this.materialRaisedButton2.TabIndex = 9;
+            this.materialRaisedButton2.Text = "incidencias";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(508, 74);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(107, 23);
+            this.materialRaisedButton1.TabIndex = 8;
+            this.materialRaisedButton1.Text = "Componentes";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
             // frmTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,13 +372,11 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.TextBox txtNombre;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialRaisedButton txtConsultar;
@@ -356,5 +387,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Maquinaria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }

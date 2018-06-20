@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,15 @@ namespace UI.Console
 
         private void materialLabel5_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            Tarea tarea = new Tarea();
+            tarea.nombre = this.txtNombre.Text;
+            tarea.descripcion = this.txtDescripcion.Text;
+           
 
         }
     }

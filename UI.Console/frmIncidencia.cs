@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,14 @@ namespace UI.Console
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            Incidencia incidencia = new Incidencia();
+            incidencia.nombre = this.txtNombre.Text;
+            incidencia.descripcion = this.txtDescripcion.Text;
 
         }
     }

@@ -190,6 +190,7 @@
             this.materialRaisedButton5.TabIndex = 8;
             this.materialRaisedButton5.Text = "Agregar";
             this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
             // 
             // materialLabel3
             // 
