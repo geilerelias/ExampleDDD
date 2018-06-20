@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,58 @@ using System.Windows.Forms;
 
 namespace UI.Console
 {
-    public partial class Principal : Form
+    public partial class frmPrincipal : Form
     {
-        public Principal()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Maquinaria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton4_Click(object sender, EventArgs e)
+        {
+                 Maquinaria maquina = new Maquinaria();
+                 maquina.Placa = this.txtPlaca.Text;
+                maquina.Marca = this.txtMarca.Text;
+                maquina.Linea = this.txtLinea.Text;
+                maquina.Modelo = this.txtModelo.Text;
+                maquina.Color = this.txtColor.Text;
+                maquina.FechaAdquisicion = this.txtFecha.Text;
+                maquina.Chasi = this.txtChasis.Text;
+                maquina.Motor = this.txtMotor.Text;
+
+                }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
 
         }

@@ -144,7 +144,7 @@ namespace UI.Console
                         #region  Crear Maquinaria
                         System.Console.WriteLine("Agregando Maquinaria");
                         System.Console.ReadLine();
-                        Maquinaria maquinaria = new Maquinaria();
+                        Domain.Entities.Maquinaria maquinaria = new Domain.Entities.Maquinaria();
                         System.Console.WriteLine("Digite la Placa");
                         maquinaria.Placa=System.Console.ReadLine();
 
@@ -198,7 +198,7 @@ namespace UI.Console
                         System.Console.Clear();
                         System.Console.WriteLine("Listar Maquinaria");
                         MaquinariaService serviceListar = new MaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
-                        List<Maquinaria> maquinarias = serviceListar.GetAll().ToList();
+                        List<Domain.Entities.Maquinaria> maquinarias = serviceListar.GetAll().ToList();
                         foreach (var item in maquinarias)
                         {
                             System.Console.WriteLine("--------------------------------------------");

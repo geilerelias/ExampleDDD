@@ -37,7 +37,7 @@ namespace UI.Console
 
                     case '2':
                         System.Console.Clear();
-                        Principal form = new Principal();
+                        frmPrincipal form = new frmPrincipal();
                         form.ShowDialog();
                         ProgramTranscolba pt = new ProgramTranscolba();
                         pt.menu();
