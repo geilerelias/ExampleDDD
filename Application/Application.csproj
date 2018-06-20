@@ -51,6 +51,7 @@
     <Compile Include="Abstracts\IOperacionFinanciera.cs" />
     <Compile Include="Base\IService.cs" />
     <Compile Include="Implements\AgregarComponenteAMaquinariaService.cs" />
+    <Compile Include="Implements\AgregarMaquinariaService.cs" />
     <Compile Include="Implements\ComponenteService.cs" />
     <Compile Include="Implements\TareaService.cs" />
     <Compile Include="Implements\IncidenciaService.cs" />

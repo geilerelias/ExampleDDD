@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201806191651258_altermaquinaria.Designer.cs">
       <DependentUpon>201806191651258_altermaquinaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806201138233_altermaquinaria1.cs" />
+    <Compile Include="Migrations\201806201138233_altermaquinaria1.Designer.cs">
+      <DependentUpon>201806201138233_altermaquinaria1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoContext.cs" />
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806191651258_altermaquinaria.resx">
       <DependentUpon>201806191651258_altermaquinaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201138233_altermaquinaria1.resx">
+      <DependentUpon>201806201138233_altermaquinaria1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

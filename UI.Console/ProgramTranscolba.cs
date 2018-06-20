@@ -14,7 +14,7 @@ namespace UI.Console
 {
     class ProgramTranscolba
     {
-         public void menu()
+        public void menu()
         {
             bool seguir = true;
             do
@@ -33,7 +33,6 @@ namespace UI.Console
                 {
                     case '1':
                         menuMaquinaria(context);
-
                         // Continuar lógica y extraer métodos //
                         break;
                     case '2':
@@ -58,10 +57,8 @@ namespace UI.Console
             } while (seguir);
         }
 
-         void menuComponentes(BancoContext context)
+        void menuComponentes(BancoContext context)
         {
-
-
             System.Console.ReadKey();
             char seguir = 's';
             do
@@ -77,7 +74,7 @@ namespace UI.Console
                 {
                     case '1':
                         System.Console.Clear();
-                        #region  Consignar
+                        #region   Crear Componente a maquinaria
 
                         AgregarComponenteAMaquinariaService _service = new AgregarComponenteAMaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
                         var request = new AgregarComponenteAMaquinariaRequest() { MaquinariaPlaca = "123abc", Descripcion = "sistema de engranaje", Nombre = "Piñon", Referencia = "12345ywtwq" };
@@ -91,9 +88,10 @@ namespace UI.Console
                         // Continuar lógica y extraer métodos //
                         break;
                     case '2':
+
+                        #region  Eliminar Componente
                         System.Console.Clear();
-                        System.Console.WriteLine("Eliminar Country");
-                        #region  Eliminar Country
+                        System.Console.WriteLine("Eliminar Componente");
                         string nombre = "venezuela";
                         //Country coun = service.Find(nombre);
                         //service.Delete(coun);
@@ -102,15 +100,15 @@ namespace UI.Console
                         // Continuar lógica y extraer métodos //
                         break;
                     case '3':
-                        System.Console.Clear();
-                        System.Console.WriteLine("Listar Country");
-                        #region  Listar Country
+                        #region  Listar Componente
                         //List<Country> countries = service.GetAll().ToList();
                         //foreach (var item in countries)
                         //{
                         //    System.Console.WriteLine(item.Name);
                         //}
                         #endregion
+                        System.Console.Clear();
+                        System.Console.WriteLine("Listar Componentes");
                         // Continuar lógica y extraer métodos //
                         System.Console.ReadKey();
                         break;
@@ -126,10 +124,10 @@ namespace UI.Console
             } while (seguir == 's');
         }
 
-         void menuMaquinaria(BancoContext context)
+        void menuMaquinaria(BancoContext context)
         {
 
-            MaquinariaService service = new MaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
+            AgregarMaquinariaService service = new AgregarMaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
             char seguir = 's';
             do
             {
@@ -144,28 +142,43 @@ namespace UI.Console
                 {
                     case '1':
                         System.Console.Clear();
-                        System.Console.WriteLine("Crear Country");
-                        #region  Crear Country
-                        System.Console.Clear();
-                        System.Console.WriteLine("Maquinaria");
+
                         #region  Crear Maquinaria
-
+                        System.Console.WriteLine("Agregando Maquinaria");
                         Maquinaria maquinaria = new Maquinaria();
+                        System.Console.WriteLine("Digite la Placa");
+                        maquinaria.Placa=System.Console.ReadLine();
 
-                        maquinaria.Chasi = "123abc";
-                        maquinaria.Color = "rojo";
-                        maquinaria.Linea = "caminoneta";
-                        maquinaria.Marca = "nissan";
-                        maquinaria.Modelo = "2012";
-                        maquinaria.Motor = "125-678";
-                        maquinaria.Placa = "aaa-58c";
-                        maquinaria.FechaAdquisicion = "2018-05-05";
+                        System.Console.WriteLine("Digite la Marca");
+                        maquinaria.Marca=System.Console.ReadLine();
 
-                        service.Create(maquinaria);
+                        System.Console.WriteLine("Digite la Linea");
+                        maquinaria.Linea=System.Console.ReadLine();
 
+                        System.Console.WriteLine("Digite la Modelo");
+                        maquinaria.Modelo=System.Console.ReadLine();
+
+                        System.Console.WriteLine("Digite la Color");
+                        maquinaria.Color=System.Console.ReadLine();
+
+                        System.Console.WriteLine("Digite la Fecha de Adquisicion");
+                        maquinaria.FechaAdquisicion=System.Console.ReadLine();
+
+                        System.Console.WriteLine("Digite la Chasi");
+                        maquinaria.Chasi=System.Console.ReadLine();
+
+                        System.Console.WriteLine("Digite la Motor");
+                        maquinaria.Motor=System.Console.ReadLine();
+
+
+                            
+                        var request = new AgregarMaquinariaRequest() { Placa = maquinaria.Placa, Marca = maquinaria.Marca, Linea = maquinaria.Linea, Modelo = maquinaria.Modelo, Color = maquinaria.Color, FechaAdquisicion = maquinaria.FechaAdquisicion, Chasi = maquinaria.Chasi, Motor = maquinaria.Motor };
+
+                        AgregarMaquinariaResponse response = service.Ejecutar(request);
+
+                        System.Console.WriteLine(response.Mensaje);
                         #endregion
 
-                        #endregion
                         System.Console.ReadKey();
                         // Continuar lógica y extraer métodos //
                         break;
