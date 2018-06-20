@@ -90,6 +90,11 @@ namespace UI.Console
             componente.descripcion = this.txtDescripcion.Text;
             
         }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
