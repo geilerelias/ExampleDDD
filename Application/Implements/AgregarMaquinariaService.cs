@@ -20,7 +20,7 @@ namespace Application.Implements
             _unitOfWork = unitOfWork;
             _maquinariaRepository = maquinariaRepository;
         }
-        public AgregarMaquinariaResponse Ejecutar(AgregarMaquinariaRequest request)
+        public AgregarMaquinariaResponse Agregar(AgregarMaquinariaRequest request)
         {
             Maquinaria maquina = _maquinariaRepository.FindBy(t => t.Placa.Equals(request.Placa)).FirstOrDefault();
             if (maquina == null)
@@ -40,7 +40,46 @@ namespace Application.Implements
             }
             else
             {
-                return new AgregarMaquinariaResponse() { Mensaje = $"Id de Máquina ya se encuentra registrado." };
+                return new AgregarMaquinariaResponse() { Mensaje = $"La Placa de la Máquina ya se encuentra registrado." };
+            }
+        }
+
+        public AgregarMaquinariaResponse Eliminar(AgregarMaquinariaRequest request)
+        {
+            Maquinaria maquina = _maquinariaRepository.FindBy(t => t.Placa.Equals(request.Placa)).FirstOrDefault();
+            if (maquina != null)
+            {
+                _maquinariaRepository.Delete(maquina);
+                _unitOfWork.Commit();
+                return new AgregarMaquinariaResponse() { Mensaje = $"Se ha Eliminado la maquina {maquina.Placa} satisfatoriamente." };
+            }
+            else
+            {
+                return new AgregarMaquinariaResponse() { Mensaje = $"La Placa de la Máquina no se encuentra registrada." };
+            }
+        }
+
+        public AgregarMaquinariaResponse Consultar(AgregarMaquinariaRequest request)
+        {
+            Maquinaria maquina = _maquinariaRepository.FindBy(t => t.Placa.Equals(request.Placa)).FirstOrDefault();
+            if (maquina == null)
+            {
+                maquina = new Maquinaria();
+                maquina.Placa = request.Placa;
+                maquina.Marca = request.Marca;
+                maquina.Linea = request.Linea;
+                maquina.Modelo = request.Modelo;
+                maquina.Color = request.Color;
+                maquina.FechaAdquisicion = request.FechaAdquisicion;
+                maquina.Chasi = request.Chasi;
+                maquina.Motor = request.Motor;
+                _maquinariaRepository.Add(maquina);
+                _unitOfWork.Commit();
+                return new AgregarMaquinariaResponse() { Mensaje = $"Se ha agregado la maquina {maquina.Placa} satisfatoriamente." };
+            }
+            else
+            {
+                return new AgregarMaquinariaResponse() { Mensaje = $"La Placa de la Máquina ya se encuentra registrado." };
             }
         }
 

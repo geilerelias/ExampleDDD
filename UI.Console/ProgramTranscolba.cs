@@ -126,8 +126,7 @@ namespace UI.Console
 
         void menuMaquinaria(BancoContext context)
         {
-
-            AgregarMaquinariaService service = new AgregarMaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
+            AgregarMaquinariaService serviceAgregar = new AgregarMaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
             char seguir = 's';
             do
             {
@@ -142,9 +141,9 @@ namespace UI.Console
                 {
                     case '1':
                         System.Console.Clear();
-
                         #region  Crear Maquinaria
                         System.Console.WriteLine("Agregando Maquinaria");
+                        System.Console.ReadLine();
                         Maquinaria maquinaria = new Maquinaria();
                         System.Console.WriteLine("Digite la Placa");
                         maquinaria.Placa=System.Console.ReadLine();
@@ -155,26 +154,26 @@ namespace UI.Console
                         System.Console.WriteLine("Digite la Linea");
                         maquinaria.Linea=System.Console.ReadLine();
 
-                        System.Console.WriteLine("Digite la Modelo");
+                        System.Console.WriteLine("Digite el Modelo");
                         maquinaria.Modelo=System.Console.ReadLine();
 
-                        System.Console.WriteLine("Digite la Color");
+                        System.Console.WriteLine("Digite el  Color");
                         maquinaria.Color=System.Console.ReadLine();
 
                         System.Console.WriteLine("Digite la Fecha de Adquisicion");
                         maquinaria.FechaAdquisicion=System.Console.ReadLine();
 
-                        System.Console.WriteLine("Digite la Chasi");
+                        System.Console.WriteLine("Digite el numero de  Chasi");
                         maquinaria.Chasi=System.Console.ReadLine();
 
-                        System.Console.WriteLine("Digite la Motor");
+                        System.Console.WriteLine("Digite la referencia del  Motor");
                         maquinaria.Motor=System.Console.ReadLine();
 
 
                             
                         var request = new AgregarMaquinariaRequest() { Placa = maquinaria.Placa, Marca = maquinaria.Marca, Linea = maquinaria.Linea, Modelo = maquinaria.Modelo, Color = maquinaria.Color, FechaAdquisicion = maquinaria.FechaAdquisicion, Chasi = maquinaria.Chasi, Motor = maquinaria.Motor };
 
-                        AgregarMaquinariaResponse response = service.Ejecutar(request);
+                        AgregarMaquinariaResponse response = serviceAgregar.Agregar(request);
 
                         System.Console.WriteLine(response.Mensaje);
                         #endregion
@@ -183,9 +182,9 @@ namespace UI.Console
                         // Continuar lógica y extraer métodos //
                         break;
                     case '2':
+                        #region  Eliminar Maquinaria
                         System.Console.Clear();
-                        System.Console.WriteLine("Eliminar Country");
-                        #region  Eliminar Country
+                        System.Console.WriteLine("Eliminar Maquinaria");
                         //string nombre = "venezuela";
                         //Country coun = service.Find(nombre);
                         //service.Delete(coun);
@@ -194,14 +193,31 @@ namespace UI.Console
                         // Continuar lógica y extraer métodos //
                         break;
                     case '3':
-                        System.Console.Clear();
-                        System.Console.WriteLine("Listar Country");
+
                         #region  Listar Country
-                        //List<Country> countries = service.GetAll().ToList();
-                        //foreach (var item in countries)
-                        //{
-                        //    System.Console.WriteLine(item.Name);
-                        //}
+                        System.Console.Clear();
+                        System.Console.WriteLine("Listar Maquinaria");
+                        MaquinariaService serviceListar = new MaquinariaService(new UnitOfWork(context), new MaquinariaRepository(context));
+                        List<Maquinaria> maquinarias = serviceListar.GetAll().ToList();
+                        foreach (var item in maquinarias)
+                        {
+                            System.Console.WriteLine("--------------------------------------------");
+                            System.Console.WriteLine(item.Placa);
+                            System.Console.WriteLine(item.Marca);
+                            System.Console.WriteLine(item.FechaAdquisicion);
+                            System.Console.WriteLine("Placa");
+                            System.Console.WriteLine("Marca");
+                            System.Console.WriteLine("Linea");
+                            System.Console.WriteLine("Modelo");
+                            System.Console.WriteLine("Color");
+                            System.Console.WriteLine("Adquisicion");
+                            System.Console.WriteLine("Numero de Chasi");
+                            System.Console.WriteLine("Numero de Motor");
+                            System.Console.WriteLine("--------------------------------------------");
+                        }
+                       
+                        // Continuar lógica y extraer métodos //
+                        System.Console.ReadKey();
                         #endregion
                         // Continuar lógica y extraer métodos //
                         System.Console.ReadKey();

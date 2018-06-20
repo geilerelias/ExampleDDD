@@ -53,6 +53,7 @@
     <Compile Include="Implements\AgregarComponenteAMaquinariaService.cs" />
     <Compile Include="Implements\AgregarMaquinariaService.cs" />
     <Compile Include="Implements\ComponenteService.cs" />
+    <Compile Include="Implements\EliminarMaquinariaService.cs" />
     <Compile Include="Implements\TareaService.cs" />
     <Compile Include="Implements\IncidenciaService.cs" />
     <Compile Include="Implements\PersonService.cs" />
