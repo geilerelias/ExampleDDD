@@ -16,7 +16,7 @@ namespace UI.Console
     {
         static void Main(string[] args)
         {
-
+            
             do
             {
                 System.Console.Clear();
@@ -37,6 +37,8 @@ namespace UI.Console
 
                     case '2':
                         System.Console.Clear();
+                        Principal form = new Principal();
+                        form.ShowDialog();
                         ProgramTranscolba pt = new ProgramTranscolba();
                         pt.menu();
                         // Continuar lógica y extraer métodos //

@@ -16,10 +16,5 @@ namespace UI.Console
         {
             InitializeComponent();
         }
-
-        private void materialDivider1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
