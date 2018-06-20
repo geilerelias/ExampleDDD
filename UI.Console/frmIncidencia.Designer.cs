@@ -35,7 +35,24 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.Consultar = new System.Windows.Forms.TabControl();
+            this.Agregar = new System.Windows.Forms.TabPage();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.Consultar.SuspendLayout();
+            this.Agregar.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,15 +139,153 @@
             this.materialDivider1.TabIndex = 2;
             this.materialDivider1.Text = "materialDivider1";
             // 
+            // Consultar
+            // 
+            this.Consultar.Controls.Add(this.Agregar);
+            this.Consultar.Controls.Add(this.tabPage2);
+            this.Consultar.Location = new System.Drawing.Point(12, 123);
+            this.Consultar.Name = "Consultar";
+            this.Consultar.SelectedIndex = 0;
+            this.Consultar.Size = new System.Drawing.Size(776, 305);
+            this.Consultar.TabIndex = 2;
+            // 
+            // Agregar
+            // 
+            this.Agregar.Controls.Add(this.txtDescripcion);
+            this.Agregar.Controls.Add(this.txtNombre);
+            this.Agregar.Controls.Add(this.materialRaisedButton5);
+            this.Agregar.Controls.Add(this.materialLabel3);
+            this.Agregar.Controls.Add(this.materialLabel1);
+            this.Agregar.Location = new System.Drawing.Point(4, 22);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Padding = new System.Windows.Forms.Padding(3);
+            this.Agregar.Size = new System.Drawing.Size(768, 279);
+            this.Agregar.TabIndex = 0;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.UseVisualStyleBackColor = true;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(486, 105);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcion.TabIndex = 13;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(181, 103);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(123, 20);
+            this.txtNombre.TabIndex = 11;
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(599, 212);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(110, 25);
+            this.materialRaisedButton5.TabIndex = 8;
+            this.materialRaisedButton5.Text = "Agregar";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(391, 107);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel3.TabIndex = 2;
+            this.materialLabel3.Text = "Descripcion";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(88, 104);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(63, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Nombre";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.txtConsultar);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(768, 279);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Consultar";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtConsultar
+            // 
+            this.txtConsultar.Depth = 0;
+            this.txtConsultar.Location = new System.Drawing.Point(313, 21);
+            this.txtConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtConsultar.Name = "txtConsultar";
+            this.txtConsultar.Primary = true;
+            this.txtConsultar.Size = new System.Drawing.Size(98, 23);
+            this.txtConsultar.TabIndex = 8;
+            this.txtConsultar.Text = "Consultar";
+            this.txtConsultar.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(207, 23);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Descripcion});
+            this.dataGridView1.Location = new System.Drawing.Point(186, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(242, 189);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
             // frmIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Consultar);
             this.Controls.Add(this.panel1);
             this.Name = "frmIncidencia";
             this.Text = "Incidencia";
             this.panel1.ResumeLayout(false);
+            this.Consultar.ResumeLayout(false);
+            this.Agregar.ResumeLayout(false);
+            this.Agregar.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +299,18 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private System.Windows.Forms.TabControl Consultar;
+        private System.Windows.Forms.TabPage Agregar;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtNombre;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private MaterialSkin.Controls.MaterialRaisedButton txtConsultar;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

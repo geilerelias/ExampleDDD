@@ -64,6 +64,7 @@
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtChasis = new System.Windows.Forms.TextBox();
             this.txtMotor = new System.Windows.Forms.TextBox();
+            this.Motor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -162,10 +163,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(55, 108);
+            this.tabControl1.Location = new System.Drawing.Point(12, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(733, 330);
+            this.tabControl1.Size = new System.Drawing.Size(788, 330);
             this.tabControl1.TabIndex = 32;
             // 
             // tabPage1
@@ -174,7 +175,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(725, 304);
+            this.tabPage1.Size = new System.Drawing.Size(780, 304);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Consultar";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -189,10 +190,11 @@
             this.Modelo,
             this.Color,
             this.FechaAdquisicion,
-            this.Chasis});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 43);
+            this.Chasis,
+            this.Motor});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(709, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(771, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // Placa
@@ -457,6 +459,11 @@
             this.txtMotor.Size = new System.Drawing.Size(100, 20);
             this.txtMotor.TabIndex = 40;
             // 
+            // Motor
+            // 
+            this.Motor.HeaderText = "Motor";
+            this.Motor.Name = "Motor";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,5 +522,6 @@
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtLinea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Motor;
     }
 }

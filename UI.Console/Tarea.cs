@@ -16,5 +16,10 @@ namespace UI.Console
         {
             InitializeComponent();
         }
+
+        private void materialLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
