@@ -16,5 +16,10 @@ namespace UI.Console
         {
             InitializeComponent();
         }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
